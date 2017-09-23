@@ -1,10 +1,8 @@
 <template>
   <div class="main">
-    <div class="warp">
       <headerr class="index-header"></headerr>
       <headerTabs class="index-headerTabs"></headerTabs>
-    </div>
-    <footerNav class="index-footer"></footerNav>
+      <footerNav class="index-footer"></footerNav>
   </div>
 </template>
 <script>
@@ -32,12 +30,13 @@
     position relative
     top 150px*/
   .main
-    position relative
-    width 100%
     height 100%
-    .warp
-      mini-height 100%
-
+    width 100%
+    .index-footer
+      width 100%
+      position fixed
+      z-index 999
+      bottom 0
 
 
 

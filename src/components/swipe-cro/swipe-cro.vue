@@ -129,6 +129,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .juanzhu-swipe
     height 131px
+    //display flex
     float: left;
     white-space: nowrap;
     overflow hidden

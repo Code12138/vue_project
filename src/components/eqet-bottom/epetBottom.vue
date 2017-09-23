@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <div class="footer" style="display: block;">
       <div class="ft">
         <span class="bt" title="触屏版">触屏版</span>
@@ -9,7 +9,7 @@
       </div>
       <div style="text-align:center;margin:0 10px 0 10px; padding-bottom:25px; font-size:12px">© wap.epet.com 版权：重庆易宠科技有限公司</div>
     </div>
-  </div>
+
 </template>
 <script>
   export default {

@@ -68,7 +68,7 @@
       <div class="fashion-viedo-num">
         <span class="eye"></span>
         <i>27456&nbsp;</i>
-        <sapn class="l">|</sapn>“01：13”
+        <span class="l">|</span>“01：13”
       </div>
     </div>
     <xline></xline>
@@ -147,7 +147,6 @@
         <div class="juanzhu-top">
           <img class="juanzhu-img" src="./c31f5c121481db47aaf92f04d6be2d6e.png" alt="">
         </div>
-
       </div>
     </div>
     <xline></xline>

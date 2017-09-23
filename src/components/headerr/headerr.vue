@@ -21,16 +21,25 @@
       </div>
       <div ref="seller">
       <ul class="navList" >
-        <li class="navListItem">首页</li>
-        <li><a href="">主粮</a></li>
+        <li class="navListItem">
+          <router-link to="/index">
+            首页
+          </router-link>
+        </li>
+        <li>
+           <router-link to="/mianFood">
+           主粮
+           </router-link>
+        </li>
         <li><a href="">医疗保健</a></li>
         <li><a href="">零食玩具</a></li>
         <li><a href="">日用外出</a></li>
         <li><a href="">美容香波</a></li>
       </ul>
+       <!-- <router-view> </router-view>-->
       </div>
-  </div>
-  </div>
+    </div>
+    </div>
 </template>
 <script>
   import BScroll from 'better-scroll'
@@ -53,7 +62,8 @@
         this.Nav_scroll();
       });
     },
-    components: {}
+    components: {
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -68,73 +78,73 @@
         height 100%
         width 100%
 
-  .header-main
-    position relative
-    padding 10px
-    .search
+    .header-main
       position relative
-      display inline-block
-      height 30px
-      background: #fff;
-      text-align: center;
-      display: -webkit-box;
-      -webkit-box-align: center;
-      .dags
-        height 19px
-        width 42px
-        font-size 14px
-        color #7e8c8d
-      .san
-        display inline-block
-        border-width: 4px;
-        font-size: 0;
-        line-height: 0;
-        border-style:   dotted solid solid;
-        border-color: #898989 transparent transparent;
-      .searchBox
+      padding 10px
+      .search
         position relative
-        padding-left 6px
-        .serach-ico
-          background url("./search.png") no-repeat
-          display block
-          width: 11px;
-          height: 11px;
-          background-position: 0 0;
-          background-size: 11px auto;
-          position: absolute;
-          right 5px
-          top 7px
-        input
-          width: 220px;
-          border: 0;
-          height: 25px;
-          background: #e9e9e9;
-          border-radius: 4px;
-          color: #bcbcbc;
-          text-indent: 10px;
-          /*font-size: 13px;*/
-          outline: 0;
-          font: 10px Arial;
+        display inline-block
+        height 30px
+        background: #fff;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        .dags
+          height 19px
+          width 42px
+          font-size 14px
+          color #7e8c8d
+        .san
+          display inline-block
+          border-width: 4px;
+          font-size: 0;
+          line-height: 0;
+          border-style:   dotted solid solid;
+          border-color: #898989 transparent transparent;
+        .searchBox
+          position relative
+          padding-left 6px
+          .serach-ico
+            background url("./search.png") no-repeat
+            display block
+            width: 11px;
+            height: 11px;
+            background-position: 0 0;
+            background-size: 11px auto;
+            position: absolute;
+            right 5px
+            top 7px
+          input
+            width: 220px;
+            border: 0;
+            height: 25px;
+            background: #e9e9e9;
+            border-radius: 4px;
+            color: #bcbcbc;
+            text-indent: 10px;
+            /*font-size: 13px;*/
+            outline: 0;
+            font: 10px Arial;
 
 
 
-      .logoImg
-        display: block;
-        height 25px
-        width 35px
-        text-decoration: none;
-        .logoinImg
-          width 25px
+        .logoImg
+          display: block;
+          height 25px
+          width 35px
+          text-decoration: none;
+          .logoinImg
+            width 25px
 
-  .navList
-    float: left;
-    white-space: nowrap;
-    overflow hidden
-    li
-      display: inline-block;
-      padding 0 15px
-      line-height: 36px;
-      font-size: 14px;
-      text-align: center;
-      color: #666;
+    .navList
+      float: left;
+      white-space: nowrap;
+      overflow hidden
+      li
+        display: inline-block;
+        padding 0 15px
+        line-height: 36px;
+        font-size: 14px;
+        text-align: center;
+        color: #666;
 </style>
