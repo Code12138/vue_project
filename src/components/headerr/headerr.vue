@@ -5,10 +5,15 @@
         <img src="./211547bb51dd23758f74fb86e9d7aae5.png">
       </div>
       <div class="header-main">
+
         <div class="search">
+          <router-link to="/city">
+          <div>
           <span class="dags">狗狗站</span>
           <span class="dags">|</span>
           <span class="dags">重庆</span>
+          </div>
+          </router-link>
           <i class="san"></i>
           <p class="searchBox">
             <input placeholder="搜索商品和品牌" type="text"/>
@@ -69,7 +74,6 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .header
     width 100%
-    overflow hidden
     background: #FFFFFF
     .xiazai
       height 55px
@@ -77,7 +81,6 @@
       img
         height 100%
         width 100%
-
     .header-main
       position relative
       padding 10px
@@ -122,7 +125,6 @@
             border-radius: 4px;
             color: #bcbcbc;
             text-indent: 10px;
-            /*font-size: 13px;*/
             outline: 0;
             font: 10px Arial;
 

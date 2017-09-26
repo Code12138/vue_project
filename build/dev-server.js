@@ -21,6 +21,33 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+const apiData = require('../src/mock/data.json')
+const apiRouter = express.Router()
+apiRouter.get('/users',function (req,res) {
+  res.send({
+    code:0,
+    data:apiData.users
+  })
+})
+app.use('/api2',apiRouter)
+
+const apiData2 = require('../src/mock/indexData.json')
+const apiRouter2 = express.Router()
+apiRouter2.get('/menus',function (req,res) {
+  res.send({
+    code:0,
+    data : apiData2.menus
+  })
+})
+app.use('/api3',apiRouter2)
+
+
+
+
+
+
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

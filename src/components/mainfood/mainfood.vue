@@ -3,7 +3,7 @@
     <div class="top">
       <router-link to="/index">  <span class="top-left" ></span></router-link>
       <span class="top-text">狗狗零食玩具</span>
-      <span class="top-right" @click="showMenu(false)"></span>
+      <span class="top-right" @click="showMenu"></span>
     </div>
     <footerNav class="showFooter" v-show="menushow"></footerNav>
     <mt-swipe class="shop-swipe" :show-indicators="true" :auto="4000" >

@@ -1,11 +1,12 @@
 <template>
   <div class="main">
-      <headerr class="index-header"></headerr>
-      <headerTabs class="index-headerTabs"></headerTabs>
-      <footerNav class="index-footer"></footerNav>
+       <headerr class="index-header"></headerr>
+       <headerTabs class="index-headerTabs"></headerTabs>
+       <footerNav class="index-footer"></footerNav>
   </div>
 </template>
 <script>
+  import axios from 'axios'
   import headerr from '../headerr/headerr.vue'
   import headerTabs from '../headerTabs/headerTabs.vue'
   import footerNav from '../footerNav/footerNav.vue'
@@ -13,6 +14,11 @@
     data() {
       return {}
     },
+  mounted(){
+      axios.get('/api3/menus').then(res=>{
+        console.log(res)
+      })
+  },
     methods: {},
     computed: {},
     components: {
@@ -23,15 +29,14 @@
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
- /* .index-header
-    position fixed
-    z-index 100
-   .index-headerTabs
-    position relative
-    top 150px*/
   .main
     height 100%
     width 100%
+    .index-header
+      position fixed
+      z-index 100
+    .index-headerTabs
+      padding-top 135px
     .index-footer
       width 100%
       position fixed

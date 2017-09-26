@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-view></router-view>
     <div class="al">
       <ul class="bottomLi">
         <router-link to="/index">
@@ -12,6 +13,7 @@
         </router-link>
       </ul>
     </div>
+
   </div>
 </template>
 <script>

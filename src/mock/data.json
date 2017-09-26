@@ -1,0 +1,25 @@
+
+{  "users" : [
+        {
+          "id":"123",
+          "username":"datong",
+          "password":"datong",
+          "phone":"1234567",
+          "e-mail":"12321"
+        },
+        {
+          "id":"1234",
+          "username":"datong1",
+          "password":"datong",
+          "phone":"1234567",
+          "e-mail":"12321"
+        },
+        {
+          "id":"1235",
+          "username":"datong2",
+          "password":"datong",
+          "phone":"1234567",
+          "e-mail":"12321"
+        }
+      ]
+}
