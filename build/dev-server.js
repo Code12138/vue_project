@@ -24,20 +24,33 @@ var app = express()
 
 const apiData = require('../src/mock/data.json')
 const apiRouter = express.Router()
+
 apiRouter.get('/users',function (req,res) {
+ /* var a = rsq.reque.username
+  var flog = false
+  var p =
+  for (api in apiData){
+    if (api.username = =a){
+      flog = true
+      if (api.password==p)
+    }
+  }*/
+
+  // console.log(req)
   res.send({
     code:0,
-    data:apiData.users
+    data:apiData.users,
+
   })
 })
 app.use('/api2',apiRouter)
 
 const apiData2 = require('../src/mock/indexData.json')
 const apiRouter2 = express.Router()
-apiRouter2.get('/menus',function (req,res) {
+apiRouter2.get('/datas',function (req,res) {
   res.send({
     code:0,
-    data : apiData2.menus
+    data : apiData2.datas
   })
 })
 app.use('/api3',apiRouter2)

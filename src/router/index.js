@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import header from '../components/headerr/headerr.vue'
 import city from '../components/city/city.vue'
 import login from '../components/login/login.vue'
 import index from '../components/index/index.vue'

@@ -69,6 +69,7 @@
 </template>
 <script>
   import axios from 'axios'
+
   import { MessageBox,Toast } from 'mint-ui';
   export default {
     data () {
@@ -85,21 +86,44 @@
       toggleLogin (isLogin) {
         this.isLogin = isLogin
       },
+
       login(){
-        axios.get('/api2/users')
-          .then(res =>{
-            const result = res.data.data
-            result.find(user=>{
-              console.log(user.username,user.password,this.user.username)
-              if(user.username === this.user.username && user.password === this.user.password){
-                MessageBox.alert('登录成功').then(action => {
-                  router.push({ path: '/index' })
-                });
+//        const nameArr =[]
+        const username = this.user.username.trim()
+        const password = this.user.password.trim()
+        const url = '/api2/users'
+        console.log(username, password, url)
+        axios.get(url)
+          .then((req, res) =>{
+          console.log(req, res)
+            const result = req.data.data
+            console.log('123', result)
+
+            let index = result.findIndex(item => {
+              return item.username === username && item.password === password
+            })
+            if(index == -1){
+              MessageBox.alert('用户名或密码错误，请重新输入')
+              this.user.username=''
+              this.user.password=''
+            } else {
+              MessageBox.alert('登录成功').then(action =>{
+               this.$router.push({path:'index'})
+
+              })
+            }
+
+            /*result.find(item=>{
+              if(item.username === username && item.password === password){
+//                MessageBox.alert('登录成功').then(action => {
+//                  router.push({ path: '/index' })
+//                });
+                Toast("成功")
               }else{
                 MessageBox.alert('登录失败').then(action => {
                 });
               }
-            })
+            })*/
           })
 
 

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-distpicker class="switch" ></v-distpicker>
+    <v-distpicker class="switch" >
+    </v-distpicker>
   </div>
 </template>
 <script>

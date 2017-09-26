@@ -12,12 +12,13 @@
   import footerNav from '../footerNav/footerNav.vue'
   export default {
     data() {
-      return {}
+      return {
+        swipeImag:{}
+      }
     },
   mounted(){
-      axios.get('/api3/menus').then(res=>{
-        console.log(res)
-      })
+
+
   },
     methods: {},
     computed: {},

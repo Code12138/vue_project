@@ -2,13 +2,11 @@
 
    <div class="mainn">
 
-     <mt-swipe class="swipe" :show-indicators="false" :auto="4000" >
-       <mt-swipe-item>
-         <img src="./4288b3a722d59db33b34181caa7ef1e4.jpg" alt=""></mt-swipe-item>
-       <mt-swipe-item>
-         <img src="./ed80ee64f24384450e757c1188e553dc.png" alt=""></mt-swipe-item>
-       <mt-swipe-item>
-         <img src="./4288b3a722d59db33b34181caa7ef1e4.jpg" alt=""></mt-swipe-item>
+     <mt-swipe class="swipe" :show-indicators="false" :auto="4000">
+       <mt-swipe-item v-for="(imags,index) in swipeImag " :key="index">
+         <img :src="imags.image"  >
+       </mt-swipe-item>
+
      </mt-swipe>
      <div class="go">
        <img src="./747562c921cd37cf0dafbe24ccfe62bd.gif" alt="">
@@ -220,14 +218,27 @@
 
 </template>
 <script>
+  import axios from 'axios'
   import xline from '../xline/xline.vue'
   import swipeCro from '../swipe-cro/swipe-cro.vue'
   import swipeCroMin from '../swipe-cro-min/swipe-cro-min.vue'
   import eqetBottom from '../eqet-bottom/epetBottom.vue'
   export default {
+
     data() {
-      return {}
+      return {
+        swipeImag:[]
+      }
     },
+  mounted (){
+    const dataArr = []
+    axios.get('/api3/datas').then(res=>{
+      const result = res.data.data
+      this.swipeImag = result[0].value
+      console.log(this.swipeImag);
+    })
+  },
+
     methods: {},
     computed: {},
     components: {
@@ -244,7 +255,7 @@
     width 100%
     .swipe
       width 100%
-      height 130px
+      height 190px
       img
         height 100%
         width 100%

@@ -8,13 +8,13 @@
           <img src="./ico1.png" alt="">
         </div>
         <div class="inputPhone" >
-          <input class="inputPhone-text" placeholder="请输入手机号" type="text"/>
+          <input class="inputPhone-text" placeholder="请输入手机号"  @input="showBut" v-model="phone"/>
           <div style="border-bottom: solid 3px gray;padding-left:20px"></div>
         </div>
       </div>
       <div>
         <div style="text-align: center;padding-right: 20px" >
-          <mt-button type="primary"   @click="showIs"   style="width: 80%;">下一步</mt-button>
+          <mt-button type="primary"  disabled="disabled" @click="showIs"   style="width: 80%;background-color: #7e8c8d">下一步</mt-button>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
           <img src="./ico1.png" alt="">
          </span>
           <span>
-          <input type="number" placeholder="请输入手机号">
+          <input placeholder="请输入手机号"  v-model="phone">
         </span>
         </li>
         <li>
@@ -36,16 +36,17 @@
           <img src="./ico5.png" alt="">
          </span>
           <span style="display: flex">
-          <input type="text" placeholder="请输入图片上的验证码"><img src="./seccode.jpg" alt="">
+          <input  placeholder="请输入图片上的验证码"><img src="./seccode.jpg" alt="">
         </span>
         </li>
-        <li>
+        <li >
           <span>
           <img src="./ico2.png" alt="">
          </span>
-          <span>
-          <input type="text" placeholder="请输入短信验证码">
-            <mt-button type=""></mt-button>
+          <span style="display: flex">
+          <input placeholder="请输入短信验证码" style="width: 150px; ">
+            <mt-button style="background:yellowgreen; font-size: 8px">获取验证码
+            </mt-button>
         </span>
         </li>
         <li>
@@ -53,7 +54,7 @@
           <img src="./ico3.png" alt="">
          </span>
           <span>
-          <input type="text" placeholder="请输入用户昵称">
+          <input placeholder="请输入用户昵称">
         </span>
         </li>
         <li>
@@ -61,7 +62,7 @@
           <img src="./ico4.png" alt="">
          </span>
           <span>
-          <input type="text" placeholder="请输入密码">
+          <input   placeholder="请输入密码">
         </span>
         </li>
         <li>
@@ -69,7 +70,7 @@
           <img src="./ico4.png" alt="">
          </span>
           <span>
-          <input type="text" placeholder="请确认密码">
+          <input   placeholder="请确认密码">
         </span>
         </li>
       </ul>
@@ -88,7 +89,8 @@
       return {
         phone:'',
         isShow:true,
-        bottomShow:false
+        bottomShow:false,
+
 
       }
     },
@@ -99,6 +101,15 @@
       showIs(){
         this.isShow = !this.isShow
         this.bottomShow = !this.bottomShow
+      },
+      showBut(){
+        console.log('ds ')
+        if(this.phone){
+          /*this.style.backgroundColor = 'red'*/
+          this.$refs.butChange.style.backgroundColor ='red'
+        }else{
+          this.type = 'danger'
+        }
       }
     },
     computed: {
