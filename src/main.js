@@ -3,7 +3,7 @@ import router from './router'
 import app from './app.vue'
 import VueScroller from 'vue-scroller'
 import Distpicker from 'v-distpicker'
-
+import VueLazyload from 'vue-lazyload'
 
 import {Field ,Navbar,Button,Swipe, SwipeItem, Tabbar, TabItem,TabContainer, TabContainerItem} from 'mint-ui'
 
@@ -23,7 +23,9 @@ Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 
 
-
+Vue.use(VueLazyload,{
+  loading:'../static/default-epet.png'
+})
 
 
 Vue.use(VueScroller)

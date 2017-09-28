@@ -22,21 +22,10 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 
+//用户登录，注册后台路由
 const apiData = require('../src/mock/data.json')
 const apiRouter = express.Router()
-
 apiRouter.get('/users',function (req,res) {
- /* var a = rsq.reque.username
-  var flog = false
-  var p =
-  for (api in apiData){
-    if (api.username = =a){
-      flog = true
-      if (api.password==p)
-    }
-  }*/
-
-  // console.log(req)
   res.send({
     code:0,
     data:apiData.users,
@@ -45,6 +34,11 @@ apiRouter.get('/users',function (req,res) {
 })
 app.use('/api2',apiRouter)
 
+
+
+
+
+//首页数据路由
 const apiData2 = require('../src/mock/indexData.json')
 const apiRouter2 = express.Router()
 apiRouter2.get('/datas',function (req,res) {
@@ -54,6 +48,18 @@ apiRouter2.get('/datas',function (req,res) {
   })
 })
 app.use('/api3',apiRouter2)
+
+//首页中每天疯抢路由
+const apiData3 = require('../src/mock/indexData.json')
+const apiRouter3 = express.Router()
+apiRouter2.get('/data',function (req,res) {
+  res.send({
+    code:0,
+    data : apiData3.data
+  })
+})
+app.use('/api4',apiRouter3)
+
 
 
 

@@ -3,24 +3,29 @@
    <div class="mainn">
 
      <mt-swipe class="swipe" :show-indicators="false" :auto="4000">
-       <mt-swipe-item v-for="(imags,index) in swipeImag " :key="index">
-         <img :src="imags.image"  >
+         <mt-swipe-item v-for="(imags,index) in swipeImag " :key="index">
+         <img v-lazy="imags.image"  >
        </mt-swipe-item>
 
      </mt-swipe>
-     <div class="go">
-       <img src="./747562c921cd37cf0dafbe24ccfe62bd.gif" alt="">
-     </div>
+     <a :href="ADimg.target.param" v-if="ADimg.image">
+       <div class="go">
+         <img  v-lazy="ADimg.image" alt="">
+       </div>
+     </a>
      <div class="shopItem">
        <ul class="shopItemUl">
-         <li><a><img src="./245cf37412e8dffe41afa66841eabad9.png" alt=""></a></li>
-         <li><a><img src="./7b47c5a8824e39e7565e685f1e50627f.png" alt=""></a></li>
+         <li v-for="(pre,index) in showUL "><a :href="pre.target.param">
+           <img v-lazy="pre.image" alt="">
+         </a>
+         </li>
+         <!--<li><a><img src="./7b47c5a8824e39e7565e685f1e50627f.png" alt=""></a></li>
          <li><a><img src="./4c044d487981caa7371b2389b3648103.png" alt=""></a></li>
          <li><a><img src="./1061e9e8229ae24d2f11552205a45784.png" alt=""></a></li>
          <li><a><img src="./6279c8c07e4aa2009b7a1646ba2b1e98.png" alt=""></a></li>
          <li><a><img src="./77fa6f1464950c969fcb34468b7672ea.png" alt=""></a></li>
          <li><a><img src="./ac197d108d8bbfd09d574845f6bd4778.png" alt=""></a></li>
-         <li><a><img src="./ac197d108d8bbfd09d574845f6bd4778.png" alt=""></a></li>
+         <li><a><img src="./ac197d108d8bbfd09d574845f6bd4778.png" alt=""></a></li>-->
        </ul>
      </div>
      <xline></xline>
@@ -45,7 +50,7 @@
        </div>
        <div class="hotAD-img">
          <div class="hotAd-img-left">
-           <img src="./565a1711d0681551002e8fdd59ec3b6f.png" alt="">
+           <img   src="./565a1711d0681551002e8fdd59ec3b6f.png" alt="">
          </div>
          <div class="hotAd-img-right">
            <img src="./06a794c1bca77f103a85e1f36bb4052d.png" alt="">
@@ -227,15 +232,32 @@
 
     data() {
       return {
-        swipeImag:[]
+        swipeImag:[],
+        ADimg:{},
+        showUL:[]
       }
     },
   mounted (){
     const dataArr = []
     axios.get('/api3/datas').then(res=>{
       const result = res.data.data
+      //轮播图
       this.swipeImag = result[0].value
-      console.log(this.swipeImag);
+      //广告
+      this.ADimg = result[1].value[0]
+      //分类数据
+      this.showUL =result[3].menus
+
+
+      result.forEach(item =>{
+        if(item.type === '13' && item.index === '4'){
+          dataArr.push(item)
+        }
+
+      })
+
+
+
     })
   },
 

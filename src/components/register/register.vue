@@ -2,8 +2,7 @@
 <div class="register">
 
     <div class="re-main" v-show="isShow">
-      <div class="icoPhone" style="
-      height: 40px;padding-left: 20px;display: flex;padding-top: 10px" >
+      <div class="icoPhone" style="height: 40px;padding-left: 20px;display: flex;padding-top: 10px" >
         <div class="phone-ico">
           <img src="./ico1.png" alt="">
         </div>
@@ -14,7 +13,7 @@
       </div>
       <div>
         <div style="text-align: center;padding-right: 20px" >
-          <mt-button type="primary"  disabled="disabled" @click="showIs"   style="width: 80%;background-color: #7e8c8d">下一步</mt-button>
+          <mt-button type="danger"  :class="bgColor" @click="showIs"  :disabled="disabledData" style="width: 80%;">下一步</mt-button>
         </div>
       </div>
     </div>
@@ -88,10 +87,10 @@
     data() {
       return {
         phone:'',
-        isShow:true,
         bottomShow:false,
-
-
+        isShow:true,
+        disabledData:true,
+        bgColor:'bgColorBt'
       }
     },
     methods: {
@@ -101,16 +100,16 @@
       showIs(){
         this.isShow = !this.isShow
         this.bottomShow = !this.bottomShow
+        
       },
       showBut(){
-        console.log('ds ')
         if(this.phone){
-          /*this.style.backgroundColor = 'red'*/
-          this.$refs.butChange.style.backgroundColor ='red'
-        }else{
-          this.type = 'danger'
+          this.disabledData = false
+          this.bgColor = 'bgColorBtn'
+
         }
       }
+
     },
     computed: {
 
@@ -137,9 +136,7 @@
           border: none;
           color: #b8b8b8;
 
-
-
-  .mainBottom
+   .mainBottom
     li
       display flex
       margin-top 20px
@@ -155,6 +152,9 @@
           font-size: 13px;
           border: none;
           color: #b8b8b8;
-
+.bgColorBt
+  background: gray
+.bgColorBtn
+  background: red
 
 </style>

@@ -174,7 +174,7 @@
                     "image": "https://img2.epetbar.com/nowater/2017-09/22/19/d81683c744beaf960b5ac11a44a818fd.jpg@!water",
                     "img_size": "750x320",
                     "target": {
-                        "mode": "web",
+                        "mode": "web",q
                         "param": "http://sale.epet.com/m/mould/activity/ztMjUzMw%3D%3D.html?tid=2533"
                     }
                 },
@@ -276,7 +276,7 @@
             "is_dynamic": "1",
             "type_name": "图片轮播广告"
         },
-        {
+          {
             "index": "2435",
             "is_show": 1,
             "type": "3",

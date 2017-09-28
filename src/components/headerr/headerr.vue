@@ -139,11 +139,11 @@
             width 25px
 
     .navList
-      float: left;
-      white-space: nowrap;
+      float left
       overflow hidden
+      white-space nowrap
       li
-        display: inline-block;
+        display inline-block
         padding 0 15px
         line-height: 36px;
         font-size: 14px;
